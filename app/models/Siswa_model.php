@@ -1,0 +1,72 @@
+<?php
+
+class Siswa_model
+{
+  private $tabel = "siswa";
+  private $db;
+
+  public function __construct()
+  {
+    $this->db = new Database();
+  }
+
+  public function getAllSiswa()
+  {
+    $this->db->query("SELECT * FROM " . $this->tabel);
+    return $this->db->resultSet();
+  }
+
+  public function getSiswaById($id)
+  {
+    $this->db->query("SELECT * FROM " . $this->tabel . " WHERE id=:id");
+    $this->db->bind("id", $id);
+    return $this->db->single();
+  }
+
+  public function tambahDataSiswa($data)
+  {
+    $query = "INSERT INTO siswa 
+              VALUES
+              (NULL, :nama, :nis, :kelas, :jurusan)";
+    $this->db->query($query);
+    $this->db->bind("nama", $data["nama"]);
+    $this->db->bind("nis", $data["nis"]);
+    $this->db->bind("kelas", $data["kelas"]);
+    $this->db->bind("jurusan", $data["jurusan"]);
+    
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
+
+  public function hapusDataSiswa($id)
+  {
+    $query = "DELETE FROM siswa WHERE id = :id";
+    $this->db->query($query);
+    $this->db->bind("id", $id);
+    
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function ubahDataSiswa($data)
+  {
+    $query = "UPDATE siswa SET 
+                nama = :nama,
+                nis = :nis,
+                kelas = :kelas,
+                jurusan = :jurusan
+              WHERE id = :id";
+              
+    $this->db->query($query);
+    $this->db->bind("nama", $data["nama"]);
+    $this->db->bind("nis", $data["nis"]);
+    $this->db->bind("kelas", $data["kelas"]);
+    $this->db->bind("jurusan", $data["jurusan"]);
+    $this->db->bind("id", $data["id"]);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
+}
