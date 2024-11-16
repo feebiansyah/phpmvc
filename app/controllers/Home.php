@@ -12,5 +12,8 @@ class Home extends controller{
    public function create(){
      
    }
+   public function store(){
+     
+   }
   
 }

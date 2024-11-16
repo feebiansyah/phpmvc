@@ -67,4 +67,8 @@ class Siswa extends controller
       exit();
     }
   }
+  
+  public function store(){
+    
+  }
 }
