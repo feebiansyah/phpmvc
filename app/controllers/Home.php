@@ -9,5 +9,8 @@ class Home extends controller{
      $this->view('home/index', $data);
      $this->view('templates/footer');
    }
+   public function create(){
+     
+   }
   
 }
