@@ -8,4 +8,8 @@ class User_model{
     return $this->nama;
   }
   
+  public function pushUser(){
+    return null;
+  }
+  
 }
