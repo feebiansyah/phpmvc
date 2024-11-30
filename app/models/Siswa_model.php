@@ -69,4 +69,7 @@ class Siswa_model
 
     return $this->db->rowCount();
   }
+  public function home(){
+    return null;
+  }
 }
