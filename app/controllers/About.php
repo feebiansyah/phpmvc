@@ -18,4 +18,9 @@ class About extends controller{
     $this->view('about/page');
     $this->view('templates/footer');
   }
+  
+  public function confG(){
+    return 'dom';
+  }
+  
 }
