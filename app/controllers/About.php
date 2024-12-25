@@ -23,4 +23,8 @@ class About extends controller{
     return 'dom';
   }
   
+  public function conhuggg(){
+    return 'dom';
+  }
+  
 }
