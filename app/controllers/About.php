@@ -20,11 +20,11 @@ class About extends controller{
   }
   
   public function confG(){
-    return 'dom';
+    return 's';
   }
   
   public function conhughjhhhgg(){
-    return 'dom';
+    return 'a';
   }
   
 }
