@@ -29,5 +29,8 @@ class About extends controller{
   public function dhdhdjsisj(){
     return 'c';
   }
+  public function dhdhdjsjdjdjdjdisj(){
+    return 'f';
+  }
   
 }
